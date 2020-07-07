@@ -18,6 +18,27 @@ def get_maximum_price_for_each(list_of_budget):
         # list_of_budget[i]*len(list_of_budget)
 
 N = int(input())
+customer_budget_list = []
 for customer_budget in range(N):
-    customer_budget_input = list(input())
-get_maximum_price_for_each(customer_budget_input)
+    customer_budget_list.append(int(input()))
+
+customer_budget_list.sort()
+print(customer_budget_list)
+
+# pseudo case for minimum value
+print(min(customer_budget_list)*len(customer_budget_list))
+
+# pseudo case for maximum value
+print(max(customer_budget_list))
+
+# pseudo case for in between value
+"""
+    a = []
+    if a[1] == a[0]; a[1]*len(a)
+    if a[1] > a[0]; a[1]*(len(a)-1) 
+
+"""
+for i in range(len(customer_budget_list[1:-1])):
+    if customer_budget_list[i] <= customer_budget_list[i+1]:
+        print(customer_budget_list[i]*len(customer_budget_list[:-1]))
+# get_maximum_price_for_each(customer_budget_input)

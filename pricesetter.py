@@ -6,16 +6,16 @@
 # greedy approach algorithm to set declared_price
 
 # calculate all maximum price for each budget
-def get_maximum_price_for_each(list_of_budget):
-    count = 0
-    for budget in range(len(list_of_budget)):
-        if list_of_budget[budget] <= list_of_budget[budget] + 1:
-            count += 1
-        # elif list_of_budget[budget] >= list_of_budget[budget] + 1:
-        #     count -= 1
-        print(count)
-    #print(count)
-        # list_of_budget[i]*len(list_of_budget)
+def get_maximum_price_for_each(list_of_sorted_budget):
+    for index, budget in enumerate(list_of_sorted_budget[1:-2]):
+        if budget <= next(budget):
+            return budget*(range(list_of_sorted_budget[1:-2] - )
+            
+def get_profit_from_minimum_budget(list_of_sorted_budget):
+    return min(list_of_sorted_budget)*len(list_of_sorted_budget)
+
+def get_profit_from_maximum_budget(list_of_sorted_budget):
+    return max(list_of_sorted_budget)*len(list_of_sorted_budget)
 
 N = int(input())
 customer_budget_list = []
@@ -24,6 +24,8 @@ for customer_budget in range(N):
 
 customer_budget_list.sort() # sort list inplace
 print(customer_budget_list)
+
+get_maximum_price_for_each(customer_budget_list)
 
 # # pseudo case for minimum value
 # print(min(customer_budget_list)*len(customer_budget_list))
